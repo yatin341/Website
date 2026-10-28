@@ -1,9 +1,4 @@
 
-/* =========================================
-   LORD KRISHNA BOUTIQUE
-   Complete responsive website stylesheet
-========================================= */
-
 :root {
     --wine: #70283d;
     --wine-dark: #4c1728;
@@ -465,7 +460,7 @@ p {
     line-height: 1.8;
 }
 
-/* Feature Banner */
+
 
 .feature-banner {
     display: grid;
@@ -503,7 +498,7 @@ p {
     font-size: 13px;
 }
 
-/* Services */
+
 
 .services {
     background: var(--cream);
@@ -729,7 +724,6 @@ p {
     text-align: center;
 }
 
-/* Contact */
 
 .contact-section {
     background: var(--cream);
@@ -798,7 +792,7 @@ p {
     color: var(--rose);
 }
 
-/* Footer */
+
 
 .site-footer {
     padding: 48px 0 25px;
@@ -857,7 +851,7 @@ p {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* Keyboard accessibility */
+
 
 a:focus-visible,
 button:focus-visible,
@@ -869,7 +863,7 @@ textarea:focus-visible {
     outline-offset: 4px;
 }
 
-/* Tablet */
+
 
 @media (max-width: 1000px) {
     .nav-links {
@@ -898,7 +892,7 @@ textarea:focus-visible {
     }
 }
 
-/* Mobile navigation */
+
 
 @media (max-width: 760px) {
     .container {
@@ -1075,7 +1069,7 @@ textarea:focus-visible {
     }
 }
 
-/* Small phones */
+
 
 @media (max-width: 430px) {
     .container {
@@ -1150,7 +1144,6 @@ textarea:focus-visible {
     }
 }
 
-/* Reduced motion preference */
 
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -1160,5 +1153,128 @@ textarea:focus-visible {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+    }
+}
+
+
+.field-error {
+    display: block;
+    min-height: 0;
+    margin-top: 6px;
+    color: #b42318;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.field-error:empty {
+    display: none;
+}
+
+
+.form-error {
+    margin: 0 0 14px;
+    color: #b42318;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.form-error:empty {
+    display: none;
+}
+
+.booking-form .form-group input.invalid-field,
+.booking-form .form-group select.invalid-field,
+.booking-form .form-group textarea.invalid-field {
+    border-color: #c62828;
+    background-color: #fffafa;
+}
+
+
+.booking-form .form-group input.valid-field,
+.booking-form .form-group select.valid-field,
+.booking-form .form-group textarea.valid-field {
+    border-color: #388e3c;
+}
+
+
+.booking-form .form-group input.invalid-field:focus,
+.booking-form .form-group select.invalid-field:focus,
+.booking-form .form-group textarea.invalid-field:focus {
+    outline: 2px solid rgba(198, 40, 40, 0.18);
+    border-color: #c62828;
+    box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.08);
+}
+
+
+.booking-form .submit-button {
+    width: 100%;
+    min-height: 48px;
+    border: none;
+    cursor: pointer;
+}
+
+.booking-form .submit-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.flash-messages {
+    margin-bottom: 20px;
+}
+
+.flash-message {
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.flash-message.success {
+    color: #256029;
+    background: #e8f5e9;
+    border-color: #c8e6c9;
+}
+
+.flash-message.error,
+.flash-message.danger {
+    color: #b71c1c;
+    background: #ffebee;
+    border-color: #ffcdd2;
+}
+
+
+.booking-layout > *,
+.booking-form,
+.form-group {
+    min-width: 0;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    max-width: 100%;
+}
+
+
+@media (max-width: 760px) {
+    .booking-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .booking-form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 430px) {
+    .booking-form {
+        padding: 22px 17px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px;
     }
 }
