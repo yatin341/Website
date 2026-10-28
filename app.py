@@ -1,5 +1,6 @@
 
 import os
+import logging
 from pathlib import Path
 from datetime import date
 
@@ -20,10 +21,12 @@ from main import validate_booking, calculate_price
 BASE_DIR = Path(__file__).resolve().parent
 load_dotenv(BASE_DIR / ".env")
 
-
-
 NESTED_DIR = BASE_DIR / "lord-krishna-boutique"
-PROJECT_DIR = NESTED_DIR if (NESTED_DIR / "templates").is_dir() else BASE_DIR
+
+if (NESTED_DIR / "templates").is_dir():
+    PROJECT_DIR = NESTED_DIR
+else:
+    PROJECT_DIR = BASE_DIR
 
 app = Flask(
     __name__,
@@ -34,26 +37,55 @@ app = Flask(
 app.secret_key = os.getenv("SECRET_KEY")
 
 if not app.secret_key:
-    app.secret_key = "dev-only-change-this-secret"
+    if os.getenv("RENDER"):
+        raise RuntimeError(
+            "SECRET_KEY is missing. Add it in Render Environment settings."
+        )
+
+    app.secret_key = "local-development-only-change-this-key"
     app.logger.warning(
-        "SECRET_KEY is not set. Configure a secure key in your .env file."
+        "Using a development SECRET_KEY. Configure one in your .env file."
     )
+
+logging.basicConfig(level=logging.INFO)
 
 
 
 def get_db_connection():
-    """Connect to the MySQL database."""
+    """Connect to the configured MySQL database."""
+
+    required_vars = [
+        "DB_HOST",
+        "DB_USER",
+        "DB_PASSWORD",
+        "DB_NAME",
+    ]
+
+    missing = [
+        key for key in required_vars
+        if not os.getenv(key)
+    ]
+
+    if missing:
+        raise RuntimeError(
+            "Missing database environment variables: "
+            + ", ".join(missing)
+        )
+
     return mysql.connector.connect(
-        host=os.getenv("DB_HOST", "127.0.0.1"),
+        host=os.environ["DB_HOST"],
         port=int(os.getenv("DB_PORT", "3306")),
-        user=os.getenv("DB_USER"),
-        password=os.getenv("DB_PASSWORD"),
-        database=os.getenv("DB_NAME", "lord_krishna_boutique"),
+        user=os.environ["DB_USER"],
+        password=os.environ["DB_PASSWORD"],
+        database=os.environ["DB_NAME"],
+        connection_timeout=10,
     )
 
 
+
 def init_db():
-    """Create the bookings table and required compatibility columns."""
+    """Create the bookings table if it does not exist."""
+
     conn = get_db_connection()
 
     try:
@@ -73,6 +105,7 @@ def init_db():
             )
         """)
 
+        # Add compatibility columns for an older table.
         cursor.execute("SHOW COLUMNS FROM bookings")
         columns = {row[0] for row in cursor.fetchall()}
 
@@ -90,11 +123,15 @@ def init_db():
             """)
 
         conn.commit()
-        app.logger.info("MySQL database initialized successfully.")
+        app.logger.info("Database initialized successfully.")
+
+    except Exception:
+        conn.rollback()
+        app.logger.exception("Database initialization failed.")
+        raise
 
     finally:
         conn.close()
-
 
 
 
@@ -112,28 +149,30 @@ def home():
 
 @app.route("/book", methods=["POST"])
 def book():
-    # Read form values
     name = request.form.get("customer_name", "").strip()
     phone = request.form.get("phone", "").strip()
     service = request.form.get("service", "").strip()
     booking_date = request.form.get("booking_date", "").strip()
     message = request.form.get("message", "").strip()
 
-    # Validate name, phone, service and message using main.py
+    # Validate form fields.
     try:
         is_valid, error_message = validate_booking(
             name, phone, service, message
         )
     except Exception:
         app.logger.exception("Booking validation failed.")
-        flash("We couldn't validate your request. Please try again.", "error")
+        flash(
+            "We couldn't validate your request. Please try again.",
+            "error",
+        )
         return redirect(url_for("home") + "#booking")
 
     if not is_valid:
         flash(error_message, "error")
         return redirect(url_for("home") + "#booking")
 
-    # Require a valid appointment date
+    # Validate appointment date.
     if not booking_date:
         flash("Please select your preferred appointment date.", "error")
         return redirect(url_for("home") + "#booking")
@@ -148,12 +187,24 @@ def book():
         flash("Please select today or a future date.", "error")
         return redirect(url_for("home") + "#booking")
 
-    # Calculate service price
+    # Calculate the service price.
     try:
         price = calculate_price(service)
+
+        if not isinstance(price, (int, float)) or isinstance(price, bool):
+            raise ValueError("The calculated price is invalid.")
+
+        price = int(price)
+
+        if price < 0:
+            raise ValueError("The calculated price cannot be negative.")
+
     except Exception:
         app.logger.exception("Could not calculate booking price.")
-        flash("We couldn't process this service. Please contact us.", "error")
+        flash(
+            "We couldn't process this service. Please contact us.",
+            "error",
+        )
         return redirect(url_for("home") + "#booking")
 
     conn = None
@@ -183,7 +234,6 @@ def book():
 
         conn.commit()
 
-        # Show success only after MySQL confirms the save
         flash(
             "Booking request submitted successfully! "
             "Thank you for choosing Lord Krishna Boutique. "
@@ -191,7 +241,7 @@ def book():
             "success",
         )
 
-    except mysql.connector.Error:
+    except (mysql.connector.Error, RuntimeError, ValueError):
         if conn is not None:
             try:
                 conn.rollback()
@@ -201,8 +251,8 @@ def book():
         app.logger.exception("Could not save the booking.")
 
         flash(
-            "We couldn't save your booking. Please check your connection "
-            "or try again later.",
+            "We couldn't save your booking. Please try again later "
+            "or contact the boutique.",
             "error",
         )
 
@@ -211,27 +261,21 @@ def book():
             try:
                 conn.close()
             except mysql.connector.Error:
-                app.logger.exception("Could not close the database connection.")
+                app.logger.exception(
+                    "Could not close the database connection."
+                )
 
-    # Return to the booking area so the message is visible
     return redirect(url_for("home") + "#booking")
+
 
 
 
 @app.route("/healthz")
 def health_check():
-    return {"status": "ok"}
+    return {"status": "ok"}, 200
+
 
 
 
 if __name__ == "__main__":
-    try:
-        init_db()
-    except mysql.connector.Error:
-        app.logger.exception(
-            "Database initialization failed. Check your .env settings and "
-            "ensure MySQL is running."
-        )
-        raise
-
     app.run(debug=True)
