@@ -4,22 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#70283d">
 
-    <title>Lord Krishna Boutique | Designer Suits & Lehengas</title>
-    <meta name="description" content="Discover beautiful designer suits, bridal lehengas, embroidery and custom stitching at Lord Krishna Boutique.">
+    <title>Lord Krishna Boutique | Custom Stitching & Bridal Wear</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta
+        name="description"
+        content="Discover elegant suits, lehengas, bridal wear, custom stitching and embroidery at Lord Krishna Boutique."
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
 </head>
 
 <body>
 
     <!-- Navigation -->
     <header class="site-header">
-        <nav class="navbar container">
-            <a href="#home" class="brand">
+        <div class="container navbar">
+
+            <a href="{{ url_for('home') }}" class="brand">
                 <span class="brand-mark">LK</span>
                 <span class="brand-name">
                     <strong>Lord Krishna</strong>
@@ -27,45 +33,63 @@
                 </span>
             </a>
 
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="menu-icon" aria-label="Toggle navigation">
+            <input
+                type="checkbox"
+                id="menu-toggle"
+                class="menu-toggle"
+                aria-label="Toggle navigation"
+            >
+
+            <label for="menu-toggle" class="menu-icon" aria-label="Open navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
 
-            <div class="nav-links">
+            <nav class="nav-links" aria-label="Main navigation">
                 <a href="#home">Home</a>
                 <a href="#collections">Collections</a>
                 <a href="#services">Services</a>
-                <a href="#booking">Book Appointment</a>
-                <a href="#contact" class="nav-contact">Contact Us</a>
-            </div>
-        </nav>
+                <a href="#contact">Contact</a>
+                <a href="#booking" class="nav-contact">Book Appointment</a>
+            </nav>
+
+        </div>
     </header>
 
     <main>
 
-        <!-- Hero Section -->
+        <!-- Hero -->
         <section class="hero" id="home">
-            <div class="hero-image"></div>
+            <div class="hero-image" aria-hidden="true"></div>
 
-            <div class="hero-content container">
-                <p class="eyebrow">ELEGANCE IN EVERY STITCH</p>
-                <h1>Where Tradition Meets <span>Timeless Beauty</span></h1>
+            <div class="container hero-content">
+                <p class="eyebrow">STYLE • ELEGANCE • TRADITION</p>
+
+                <h1>
+                    Elegance Tailored
+                    <span>Just for You</span>
+                </h1>
+
                 <p class="hero-description">
-                    Discover exquisite suits, beautiful lehengas and custom
-                    designs made to celebrate your special moments.
+                    Discover beautiful ethnic wear, personalised designs,
+                    expert stitching and delicate embroidery made for
+                    your special moments.
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="#collections" class="btn btn-primary">Explore Collection</a>
-                    <a href="#booking" class="btn btn-outline">Book an Appointment</a>
+                    <a href="#collections" class="btn btn-primary">
+                        Explore Collections
+                    </a>
+
+                    <a href="#booking" class="btn btn-outline">
+                        Book an Appointment
+                    </a>
                 </div>
 
                 <div class="hero-note">
                     <span class="note-line"></span>
-                    Crafted with love. Designed for you.
+                    <span>MADE WITH LOVE, DESIGNED FOR YOU</span>
                 </div>
             </div>
         </section>
@@ -74,80 +98,125 @@
         <section class="intro section-padding">
             <div class="container intro-content">
                 <p class="eyebrow">WELCOME TO OUR BOUTIQUE</p>
-                <h2>Style That Tells <span>Your Story</span></h2>
+
+                <h2>
+                    Where Tradition Meets
+                    <span>Modern Style</span>
+                </h2>
+
                 <p>
-                    At Lord Krishna Boutique, we bring your fashion ideas to life.
-                    From everyday ethnic wear to elegant bridal outfits, discover
-                    designs that reflect your personality, tradition and style.
+                    At Lord Krishna Boutique, we believe every outfit
+                    should reflect your personality. From everyday suits
+                    to beautiful bridal creations, we help bring your
+                    fashion ideas to life.
                 </p>
-                <a href="#services" class="text-link">Discover Our Services &rarr;</a>
+
+                <a href="#services" class="text-link">
+                    Discover Our Services →
+                </a>
             </div>
         </section>
 
         <!-- Collections -->
         <section class="collections section-padding" id="collections">
             <div class="container">
+
                 <div class="section-heading">
-                    <p class="eyebrow">OUR COLLECTION</p>
-                    <h2>Find Your Perfect <span>Look</span></h2>
-                    <p>Beautiful outfits for every celebration and occasion.</p>
+                    <p class="eyebrow">OUR COLLECTIONS</p>
+                    <h2>Find Your <span>Perfect Look</span></h2>
+                    <p>
+                        Explore styles for celebrations, weddings and
+                        everyday elegance.
+                    </p>
                 </div>
 
                 <div class="collection-grid">
 
                     <article class="collection-card">
                         <a href="#booking" class="collection-image">
-                            <img src="{{ url_for('static', filename='images/lehenga.jpg') }}"
-                                 alt="Elegant designer lehenga"
-                                 loading="lazy">
-                            <span class="image-label">Bridal & Festive</span>
+                            <img
+                                src="{{ url_for('static', filename='images/suit.jpg') }}"
+                                alt="Elegant traditional suit design"
+                                loading="lazy"
+                            >
+                            <span class="image-label">EVERYDAY ELEGANCE</span>
                         </a>
-                        <div class="collection-info">
-                            <h3>Designer Lehengas</h3>
-                            <p>Make every celebration unforgettable with stunning designs.</p>
-                            <a href="#booking" class="text-link">Enquire Now &rarr;</a>
-                        </div>
-                    </article>
 
-                    <article class="collection-card">
-                        <a href="#booking" class="collection-image">
-                            <img src="{{ url_for('static', filename='images/suit.jpg') }}"
-                                 alt="Traditional designer suit"
-                                 loading="lazy">
-                            <span class="image-label">Elegant Ethnic Wear</span>
-                        </a>
                         <div class="collection-info">
                             <h3>Designer Suits</h3>
-                            <p>Timeless ethnic styles for daily wear and special occasions.</p>
-                            <a href="#booking" class="text-link">Enquire Now &rarr;</a>
+                            <p>
+                                Beautifully tailored suits designed
+                                for comfort and elegance.
+                            </p>
+                            <a href="#booking" class="text-link">
+                                Book Your Design →
+                            </a>
                         </div>
                     </article>
 
                     <article class="collection-card">
                         <a href="#booking" class="collection-image">
-                            <img src="{{ url_for('static', filename='images/anarkali.jpg') }}"
-                                 alt="Beautiful Anarkali outfit"
-                                 loading="lazy">
-                            <span class="image-label">Classic Elegance</span>
+                            <img
+                                src="{{ url_for('static', filename='images/lehenga.jpg') }}"
+                                alt="Traditional embroidered lehenga"
+                                loading="lazy"
+                            >
+                            <span class="image-label">FESTIVE FAVOURITES</span>
                         </a>
+
+                        <div class="collection-info">
+                            <h3>Lehengas</h3>
+                            <p>
+                                Stunning lehenga designs for weddings,
+                                parties and celebrations.
+                            </p>
+                            <a href="#booking" class="text-link">
+                                Book Your Design →
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="collection-card">
+                        <a href="#booking" class="collection-image">
+                            <img
+                                src="{{ url_for('static', filename='images/bridal.jpg') }}"
+                                alt="Elegant bridal outfit"
+                                loading="lazy"
+                            >
+                            <span class="image-label">YOUR SPECIAL DAY</span>
+                        </a>
+
+                        <div class="collection-info">
+                            <h3>Bridal Wear</h3>
+                            <p>
+                                Special outfits crafted to make your
+                                memorable occasions even more beautiful.
+                            </p>
+                            <a href="#booking" class="text-link">
+                                Book Your Design →
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="collection-card">
+                        <a href="#booking" class="collection-image">
+                            <img
+                                src="{{ url_for('static', filename='images/anarkali.jpg') }}"
+                                alt="Graceful Anarkali outfit"
+                                loading="lazy"
+                            >
+                            <span class="image-label">TIMELESS BEAUTY</span>
+                        </a>
+
                         <div class="collection-info">
                             <h3>Anarkali Designs</h3>
-                            <p>Graceful silhouettes for a sophisticated traditional look.</p>
-                            <a href="#booking" class="text-link">Enquire Now &rarr;</a>
-                        </div>
-                    </article>
-
-                    <article class="collection-card">
-                        <a href="#booking" class="collection-image">
-                            <img src="{{ url_for('static', filename='images/bridal.jpg') }}"
-                                 alt="Bridal fashion design"
-                                 loading="lazy">
-                            <span class="image-label">Your Special Day</span>
-                        </a>
-                        <div class="collection-info">
-                            <h3>Bridal Collection</h3>
-                            <p>Celebrate your big day in an outfit made for you.</p>
-                            <a href="#booking" class="text-link">Enquire Now &rarr;</a>
+                            <p>
+                                Graceful silhouettes and customised
+                                fits for a timeless traditional look.
+                            </p>
+                            <a href="#booking" class="text-link">
+                                Book Your Design →
+                            </a>
                         </div>
                     </article>
 
@@ -155,57 +224,87 @@
             </div>
         </section>
 
-        <!-- Boutique Banner -->
+        <!-- Feature Banner -->
         <section class="feature-banner">
             <div class="feature-image">
-                <img src="{{ url_for('static', filename='images/boutique.jpg') }}"
-                     alt="Lord Krishna Boutique"
-                     loading="lazy">
+                <img
+                    src="{{ url_for('static', filename='images/custom-design.jpg') }}"
+                    alt="Custom ethnic fashion design"
+                    loading="lazy"
+                >
             </div>
+
             <div class="feature-content">
-                <p class="eyebrow">MADE JUST FOR YOU</p>
-                <h2>Your Vision.<br><span>Our Craftsmanship.</span></h2>
+                <p class="eyebrow">YOUR STYLE, YOUR WAY</p>
+
+                <h2>
+                    Designs That Feel
+                    <span>Uniquely Yours</span>
+                </h2>
+
                 <p>
-                    Tell us what you imagine. We will help you explore fabrics,
-                    styles and stitching options for an outfit that feels uniquely yours.
+                    Have a design in mind? Share your inspiration,
+                    preferred fabric and details with us. We will help
+                    you plan an outfit that suits your style.
                 </p>
-                <a href="#booking" class="btn btn-primary">Let's Create Your Outfit</a>
+
+                <a href="#booking" class="btn btn-primary">
+                    Discuss Your Design
+                </a>
             </div>
         </section>
 
         <!-- Services -->
         <section class="services section-padding" id="services">
             <div class="container">
+
                 <div class="section-heading">
                     <p class="eyebrow">WHAT WE OFFER</p>
-                    <h2>Our Boutique <span>Services</span></h2>
-                    <p>Thoughtful details and personal service at every step.</p>
+                    <h2>Our <span>Services</span></h2>
+                    <p>
+                        Personalised boutique services for your
+                        fashion and stitching needs.
+                    </p>
                 </div>
 
                 <div class="services-grid">
+
                     <article class="service-card">
-                        <div class="service-icon">✂</div>
-                        <h3>Custom Stitching</h3>
-                        <p>Personalized fitting and stitching tailored to your measurements.</p>
+                        <div class="service-icon" aria-hidden="true">✂</div>
+                        <h3>Suit Stitching</h3>
+                        <p>
+                            Custom fitting and stitching for everyday
+                            wear and special occasions.
+                        </p>
                     </article>
 
                     <article class="service-card">
-                        <div class="service-icon">✿</div>
-                        <h3>Designer Outfits</h3>
-                        <p>Explore ethnic styles for festivals, parties and celebrations.</p>
+                        <div class="service-icon" aria-hidden="true">✿</div>
+                        <h3>Lehenga Stitching</h3>
+                        <p>
+                            Personalised lehenga styles with your
+                            preferred design and fit.
+                        </p>
                     </article>
 
                     <article class="service-card">
-                        <div class="service-icon">✧</div>
-                        <h3>Embroidery Work</h3>
-                        <p>Beautiful decorative details to give your outfit a special finish.</p>
-                    </article>
-
-                    <article class="service-card">
-                        <div class="service-icon">♡</div>
+                        <div class="service-icon" aria-hidden="true">♕</div>
                         <h3>Bridal Wear</h3>
-                        <p>Plan a memorable bridal look with personalized design options.</p>
+                        <p>
+                            Special bridal outfits designed around
+                            your preferences.
+                        </p>
                     </article>
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">❋</div>
+                        <h3>Embroidery Work</h3>
+                        <p>
+                            Decorative details to add beauty and
+                            character to your garments.
+                        </p>
+                    </article>
+
                 </div>
             </div>
         </section>
@@ -213,168 +312,278 @@
         <!-- Embroidery Feature -->
         <section class="embroidery-section">
             <div class="embroidery-image">
-                <img src="{{ url_for('static', filename='images/embroidery.jpg') }}"
-                     alt="Detailed embroidery craftsmanship"
-                     loading="lazy">
+                <img
+                    src="{{ url_for('static', filename='images/embroidery.jpg') }}"
+                    alt="Detailed embroidery on traditional clothing"
+                    loading="lazy"
+                >
             </div>
+
             <div class="embroidery-content">
-                <p class="eyebrow">THE BEAUTY IS IN THE DETAILS</p>
-                <h2>Every Stitch Has <span>A Story</span></h2>
+                <p class="eyebrow">DETAILS THAT MATTER</p>
+
+                <h2>
+                    Beautiful Details.
+                    <span>Beautiful Results.</span>
+                </h2>
+
                 <p>
-                    From delicate embroidery to carefully finished details,
-                    we believe the little things make an outfit extraordinary.
+                    Add a personal touch to your outfit with carefully
+                    selected embroidery and design details. Tell us
+                    what you have in mind and request an appointment.
                 </p>
-                <a href="#booking" class="btn btn-light">Discuss Your Design</a>
+
+                <a href="#booking" class="btn btn-light">
+                    Request an Appointment
+                </a>
             </div>
         </section>
 
-        <!-- Booking Form -->
+        <!-- Booking -->
         <section class="booking-section section-padding" id="booking">
             <div class="container booking-layout">
 
                 <div class="booking-intro">
-                    <p class="eyebrow">LET'S GET STARTED</p>
-                    <h2>Book Your <span>Appointment</span></h2>
+                    <p class="eyebrow">LET'S CREATE SOMETHING BEAUTIFUL</p>
+
+                    <h2>
+                        Book Your
+                        <span>Appointment</span>
+                    </h2>
+
                     <p>
-                        Tell us what you are looking for. Submit your details
-                        and we can discuss your design, measurements and requirements.
+                        Tell us what you need. Submit your appointment
+                        request and we can discuss your preferred design
+                        and requirements.
                     </p>
 
                     <div class="booking-benefit">
                         <span>01</span>
                         <div>
                             <h3>Share Your Ideas</h3>
-                            <p>Tell us about the outfit you have in mind.</p>
+                            <p>Tell us about your preferred outfit and design.</p>
                         </div>
                     </div>
 
                     <div class="booking-benefit">
                         <span>02</span>
                         <div>
-                            <h3>Choose Your Style</h3>
-                            <p>Discuss your preferred design and stitching.</p>
+                            <h3>Choose a Service</h3>
+                            <p>Select the stitching or design service you need.</p>
                         </div>
                     </div>
 
                     <div class="booking-benefit">
                         <span>03</span>
                         <div>
-                            <h3>Confirm Your Visit</h3>
-                            <p>We will discuss your appointment details.</p>
+                            <h3>Request an Appointment</h3>
+                            <p>Send your request for follow-up and confirmation.</p>
                         </div>
                     </div>
                 </div>
 
-                <form class="booking-form" action="{{ url_for('book') }}" method="POST">
-                    <h3>Appointment Request</h3>
-                    <p class="form-description">Fields marked * are required.</p>
+                <div class="booking-form-wrapper">
 
-                    <div class="form-group">
-                        <label for="customer_name">Full Name *</label>
-                        <input
-                            type="text"
-                            id="customer_name"
-                            name="customer_name"
-                            placeholder="Enter your full name"
-                            autocomplete="name"
-                            required>
-                    </div>
+                    <!-- Flask success/error messages -->
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            <div class="flash-messages" aria-live="polite">
+                                {% for category, message in messages %}
+                                    <p class="flash-message {{ category }}">
+                                        {{ message }}
+                                    </p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith %}
 
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="Enter your phone number"
-                            autocomplete="tel"
-                            pattern="[0-9+\-\s()]{7,20}"
-                            title="Enter a valid phone number"
-                            required>
-                    </div>
+                    <form
+                        class="booking-form"
+                        id="booking-form"
+                        action="{{ url_for('book') }}"
+                        method="POST"
+                    >
+                        <h3>Appointment Request</h3>
 
-                    <div class="form-group">
-                        <label for="service">Choose a Service *</label>
-                        <select id="service" name="service" required>
-                            <option value="">Select a service</option>
-                            <option value="Suit Stitching">Suit Stitching</option>
-                            <option value="Lehenga Stitching">Lehenga Stitching</option>
-                            <option value="Bridal Wear">Bridal Wear</option>
-                            <option value="Anarkali Design">Anarkali Design</option>
-                            <option value="Embroidery Work">Embroidery Work</option>
-                            <option value="Custom Design">Custom Design</option>
-                        </select>
-                    </div>
+                        <p class="form-description">
+                            Fields marked * are required.
+                        </p>
 
-                    <div class="form-group">
-                        <label for="booking_date">Preferred Appointment Date *</label>
-                        <input
-                            type="date"
-                            id="booking_date"
-                            name="booking_date"
-                            min="{{ today }}"
-                            required>
-                    </div>
+                        <div class="form-group">
+                            <label for="customer_name">Full Name *</label>
 
-                    <div class="form-group">
-                        <label for="message">Your Requirements</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="4"
-                            placeholder="Describe your outfit, design or special requirements"></textarea>
-                    </div>
+                            <input
+                                type="text"
+                                id="customer_name"
+                                name="customer_name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                minlength="2"
+                                maxlength="100"
+                                required
+                                aria-describedby="customer_name-error"
+                            >
 
-                    <button type="submit" class="btn btn-primary submit-button">
-                        Submit Booking Request
-                    </button>
+                            <small
+                                class="field-error"
+                                id="customer_name-error"
+                                aria-live="polite"
+                            ></small>
+                        </div>
 
-                    <p class="form-footnote">
-                        Submitting this form sends an appointment request, not a confirmed booking.
-                    </p>
-                </form>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter your 10-digit mobile number"
+                                autocomplete="tel"
+                                inputmode="numeric"
+                                maxlength="10"
+                                pattern="[6-9][0-9]{9}"
+                                title="Enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9"
+                                required
+                                aria-describedby="phone-error"
+                            >
+
+                            <small
+                                class="field-error"
+                                id="phone-error"
+                                aria-live="polite"
+                            ></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Choose a Service *</label>
+
+                            <select
+                                id="service"
+                                name="service"
+                                required
+                                aria-describedby="service-error"
+                            >
+                                <option value="">Select a service</option>
+                                <option value="Suit Stitching">Suit Stitching</option>
+                                <option value="Lehenga Stitching">Lehenga Stitching</option>
+                                <option value="Bridal Wear">Bridal Wear</option>
+                                <option value="Anarkali Design">Anarkali Design</option>
+                                <option value="Embroidery Work">Embroidery Work</option>
+                                <option value="Custom Design">Custom Design</option>
+                            </select>
+
+                            <small
+                                class="field-error"
+                                id="service-error"
+                                aria-live="polite"
+                            ></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking_date">
+                                Preferred Appointment Date *
+                            </label>
+
+                            <input
+                                type="date"
+                                id="booking_date"
+                                name="booking_date"
+                                min="{{ today }}"
+                                required
+                                aria-describedby="booking_date-error"
+                            >
+
+                            <small
+                                class="field-error"
+                                id="booking_date-error"
+                                aria-live="polite"
+                            ></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Requirements</label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="4"
+                                maxlength="2000"
+                                placeholder="Describe your outfit, fabric, design or special requirements"
+                            ></textarea>
+                        </div>
+
+                        <p
+                            class="form-error"
+                            id="form-error"
+                            aria-live="polite"
+                        ></p>
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary submit-button"
+                        >
+                            Submit Booking Request
+                        </button>
+
+                        <p class="form-footnote">
+                            Submitting this form sends an appointment
+                            request, not a confirmed booking.
+                        </p>
+                    </form>
+                </div>
+
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact -->
         <section class="contact-section section-padding" id="contact">
             <div class="container">
+
                 <div class="section-heading">
-                    <p class="eyebrow">WE'D LOVE TO HEAR FROM YOU</p>
+                    <p class="eyebrow">GET IN TOUCH</p>
                     <h2>Contact <span>Our Boutique</span></h2>
-                    <p>Have a question about an outfit or appointment? Get in touch.</p>
+                    <p>
+                        Have a question about stitching or a custom outfit?
+                        Submit an appointment request to get started.
+                    </p>
                 </div>
 
                 <div class="contact-grid">
 
                     <article class="contact-card">
-                        <div class="contact-icon">☎</div>
-                        <h3>Call Us</h3>
-                        <p>Speak to us about your requirements.</p>
-                        <a href="tel:{{ admin_phone }}" class="contact-link">
-                            {{ admin_phone if admin_phone else '6280715453' }}
+                        <div class="contact-icon" aria-hidden="true">✂</div>
+                        <h3>Our Services</h3>
+                        <p>
+                            Explore stitching, bridal wear, embroidery
+                            and custom designs.
+                        </p>
+                        <a href="#services" class="contact-link">
+                            View Services
                         </a>
                     </article>
 
                     <article class="contact-card">
-                        <div class="contact-icon">✉</div>
-                        <h3>Email Us</h3>
-                        <p>Send us your questions and design ideas.</p>
-                        <a href="mailto:{{ admin_email }}" class="contact-link">
-                            {{ admin_email if admin_email else 'yatinjangra97@gmail.com' }}
+                        <div class="contact-icon" aria-hidden="true">♡</div>
+                        <h3>Custom Designs</h3>
+                        <p>
+                            Share your outfit ideas and preferred
+                            design details with us.
+                        </p>
+                        <a href="#booking" class="contact-link">
+                            Discuss Your Design
                         </a>
                     </article>
 
                     <article class="contact-card">
-                        <div class="contact-icon">☏</div>
-                        <h3>WhatsApp</h3>
-                        <p>Message us to discuss your outfit.</p>
-                        <a
-                            href="https://wa.me/{{ admin_phone|replace('+', '')|replace(' ', '')|replace('-', '')|replace('(', '')|replace(')', '') }}"
-                            class="contact-link"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            Chat on WhatsApp
+                        <div class="contact-icon" aria-hidden="true">◷</div>
+                        <h3>Appointments</h3>
+                        <p>
+                            Send an appointment request with your
+                            preferred date.
+                        </p>
+                        <a href="#booking" class="contact-link">
+                            Book Appointment
                         </a>
                     </article>
 
@@ -387,7 +596,8 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-content">
-            <a href="#home" class="brand footer-brand">
+
+            <a href="{{ url_for('home') }}" class="brand footer-brand">
                 <span class="brand-mark">LK</span>
                 <span class="brand-name">
                     <strong>Lord Krishna</strong>
@@ -395,20 +605,171 @@
                 </span>
             </a>
 
-            <p>Celebrating your style, one beautiful stitch at a time.</p>
+            <p>Beautiful designs, made especially for you.</p>
 
-            <div class="footer-links">
+            <nav class="footer-links" aria-label="Footer navigation">
                 <a href="#home">Home</a>
                 <a href="#collections">Collections</a>
+                <a href="#services">Services</a>
                 <a href="#booking">Appointments</a>
                 <a href="#contact">Contact</a>
-            </div>
+            </nav>
 
             <p class="copyright">
-                &copy; {{ current_year }} Lord Krishna Boutique. All rights reserved.
+                &copy; {{ current_year if current_year is defined else 2026 }}
+                Lord Krishna Boutique. All rights reserved.
             </p>
+
         </div>
     </footer>
+
+    <!-- Client-side form validation -->
+    <script>
+        const bookingForm = document.getElementById("booking-form");
+
+        if (bookingForm) {
+            const validationFields = [
+                {
+                    id: "customer_name",
+                    validate(value) {
+                        const name = value.trim();
+
+                        if (!name) {
+                            return "Please enter your full name.";
+                        }
+
+                        if (name.length < 2) {
+                            return "Your name must contain at least 2 characters.";
+                        }
+
+                        return "";
+                    }
+                },
+                {
+                    id: "phone",
+                    validate(value) {
+                        const phone = value.trim();
+
+                        if (!phone) {
+                            return "Please enter your phone number.";
+                        }
+
+                        if (!/^[6-9][0-9]{9}$/.test(phone)) {
+                            return "Enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9.";
+                        }
+
+                        return "";
+                    }
+                },
+                {
+                    id: "service",
+                    validate(value) {
+                        if (!value) {
+                            return "Please select a service.";
+                        }
+
+                        return "";
+                    }
+                },
+                {
+                    id: "booking_date",
+                    validate(value) {
+                        if (!value) {
+                            return "Please select an appointment date.";
+                        }
+
+                        const selected = new Date(value + "T00:00:00");
+                        const now = new Date();
+
+                        now.setHours(0, 0, 0, 0);
+
+                        if (Number.isNaN(selected.getTime())) {
+                            return "Please enter a valid appointment date.";
+                        }
+
+                        if (selected < now) {
+                            return "Please choose today or a future date.";
+                        }
+
+                        return "";
+                    }
+                }
+            ];
+
+            function validateField(field) {
+                const input = document.getElementById(field.id);
+                const error = document.getElementById(field.id + "-error");
+
+                if (!input || !error) {
+                    return true;
+                }
+
+                const message = field.validate(input.value);
+
+                error.textContent = message;
+                input.setCustomValidity(message);
+
+                input.classList.toggle("invalid-field", Boolean(message));
+
+                input.classList.toggle(
+                    "valid-field",
+                    !message && input.value.trim() !== ""
+                );
+
+                return message === "";
+            }
+
+            validationFields.forEach(function (field) {
+                const input = document.getElementById(field.id);
+
+                input.addEventListener("blur", function () {
+                    validateField(field);
+                });
+
+                input.addEventListener("input", function () {
+                    validateField(field);
+                });
+
+                input.addEventListener("change", function () {
+                    validateField(field);
+                });
+            });
+
+            bookingForm.addEventListener("submit", function (event) {
+                let valid = true;
+
+                validationFields.forEach(function (field) {
+                    if (!validateField(field)) {
+                        valid = false;
+                    }
+                });
+
+                const formError = document.getElementById("form-error");
+
+                if (!valid) {
+                    event.preventDefault();
+
+                    formError.textContent =
+                        "Please correct the highlighted fields before submitting.";
+
+                    bookingForm.reportValidity();
+                } else {
+                    formError.textContent = "";
+                }
+            });
+        }
+
+        // Close the mobile menu after selecting a navigation link.
+        const menuToggle = document.getElementById("menu-toggle");
+
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                if (menuToggle) {
+                    menuToggle.checked = false;
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
