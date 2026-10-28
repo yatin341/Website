@@ -17,9 +17,9 @@ from flask import (
 from main import validate_booking, calculate_price
 
 
-
 BASE_DIR = Path(__file__).resolve().parent
 load_dotenv(BASE_DIR / ".env")
+
 
 
 NESTED_DIR = BASE_DIR / "lord-krishna-boutique"
@@ -38,6 +38,7 @@ if not app.secret_key:
     app.logger.warning(
         "SECRET_KEY is not set. Configure a secure key in your .env file."
     )
+
 
 
 def get_db_connection():
@@ -96,6 +97,7 @@ def init_db():
 
 
 
+
 @app.route("/")
 def home():
     return render_template(
@@ -105,6 +107,7 @@ def home():
         today=date.today().isoformat(),
         current_year=date.today().year,
     )
+
 
 
 @app.route("/book", methods=["POST"])
@@ -212,7 +215,6 @@ def book():
 
     # Return to the booking area so the message is visible
     return redirect(url_for("home") + "#booking")
-
 
 
 
