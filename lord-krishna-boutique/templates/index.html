@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lord Krishna Boutique | Designer Suits & Lehengas</title>
+    <meta name="description" content="Discover beautiful designer suits, bridal lehengas, embroidery and custom stitching at Lord Krishna Boutique.">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="site-header">
+        <nav class="navbar container">
+            <a href="#home" class="brand">
+                <span class="brand-mark">LK</span>
+                <span class="brand-name">
+                    <strong>Lord Krishna</strong>
+                    <small>BOUTIQUE</small>
+                </span>
+            </a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#collections">Collections</a>
+                <a href="#services">Services</a>
+                <a href="#booking">Book Appointment</a>
+                <a href="#contact" class="nav-contact">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-image"></div>
+
+            <div class="hero-content container">
+                <p class="eyebrow">ELEGANCE IN EVERY STITCH</p>
+                <h1>Where Tradition Meets <span>Timeless Beauty</span></h1>
+                <p class="hero-description">
+                    Discover exquisite suits, beautiful lehengas and custom
+                    designs made to celebrate your special moments.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#collections" class="btn btn-primary">Explore Collection</a>
+                    <a href="#booking" class="btn btn-outline">Book an Appointment</a>
+                </div>
+
+                <div class="hero-note">
+                    <span class="note-line"></span>
+                    Crafted with love. Designed for you.
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="intro section-padding">
+            <div class="container intro-content">
+                <p class="eyebrow">WELCOME TO OUR BOUTIQUE</p>
+                <h2>Style That Tells <span>Your Story</span></h2>
+                <p>
+                    At Lord Krishna Boutique, we bring your fashion ideas to life.
+                    From everyday ethnic wear to elegant bridal outfits, discover
+                    designs that reflect your personality, tradition and style.
+                </p>
+                <a href="#services" class="text-link">Discover Our Services &rarr;</a>
+            </div>
+        </section>
+
+        <!-- Collections -->
+        <section class="collections section-padding" id="collections">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">OUR COLLECTION</p>
+                    <h2>Find Your Perfect <span>Look</span></h2>
+                    <p>Beautiful outfits for every celebration and occasion.</p>
+                </div>
+
+                <div class="collection-grid">
+
+                    <article class="collection-card">
+                        <a href="#booking" class="collection-image">
+                            <img src="{{ url_for('static', filename='images/lehenga.jpg') }}"
+                                 alt="Elegant designer lehenga"
+                                 loading="lazy">
+                            <span class="image-label">Bridal & Festive</span>
+                        </a>
+                        <div class="collection-info">
+                            <h3>Designer Lehengas</h3>
+                            <p>Make every celebration unforgettable with stunning designs.</p>
+                            <a href="#booking" class="text-link">Enquire Now &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="collection-card">
+                        <a href="#booking" class="collection-image">
+                            <img src="{{ url_for('static', filename='images/suit.jpg') }}"
+                                 alt="Traditional designer suit"
+                                 loading="lazy">
+                            <span class="image-label">Elegant Ethnic Wear</span>
+                        </a>
+                        <div class="collection-info">
+                            <h3>Designer Suits</h3>
+                            <p>Timeless ethnic styles for daily wear and special occasions.</p>
+                            <a href="#booking" class="text-link">Enquire Now &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="collection-card">
+                        <a href="#booking" class="collection-image">
+                            <img src="{{ url_for('static', filename='images/anarkali.jpg') }}"
+                                 alt="Beautiful Anarkali outfit"
+                                 loading="lazy">
+                            <span class="image-label">Classic Elegance</span>
+                        </a>
+                        <div class="collection-info">
+                            <h3>Anarkali Designs</h3>
+                            <p>Graceful silhouettes for a sophisticated traditional look.</p>
+                            <a href="#booking" class="text-link">Enquire Now &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="collection-card">
+                        <a href="#booking" class="collection-image">
+                            <img src="{{ url_for('static', filename='images/bridal.jpg') }}"
+                                 alt="Bridal fashion design"
+                                 loading="lazy">
+                            <span class="image-label">Your Special Day</span>
+                        </a>
+                        <div class="collection-info">
+                            <h3>Bridal Collection</h3>
+                            <p>Celebrate your big day in an outfit made for you.</p>
+                            <a href="#booking" class="text-link">Enquire Now &rarr;</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Boutique Banner -->
+        <section class="feature-banner">
+            <div class="feature-image">
+                <img src="{{ url_for('static', filename='images/boutique.jpg') }}"
+                     alt="Lord Krishna Boutique"
+                     loading="lazy">
+            </div>
+            <div class="feature-content">
+                <p class="eyebrow">MADE JUST FOR YOU</p>
+                <h2>Your Vision.<br><span>Our Craftsmanship.</span></h2>
+                <p>
+                    Tell us what you imagine. We will help you explore fabrics,
+                    styles and stitching options for an outfit that feels uniquely yours.
+                </p>
+                <a href="#booking" class="btn btn-primary">Let's Create Your Outfit</a>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services section-padding" id="services">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">WHAT WE OFFER</p>
+                    <h2>Our Boutique <span>Services</span></h2>
+                    <p>Thoughtful details and personal service at every step.</p>
+                </div>
+
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon">✂</div>
+                        <h3>Custom Stitching</h3>
+                        <p>Personalized fitting and stitching tailored to your measurements.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">✿</div>
+                        <h3>Designer Outfits</h3>
+                        <p>Explore ethnic styles for festivals, parties and celebrations.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">✧</div>
+                        <h3>Embroidery Work</h3>
+                        <p>Beautiful decorative details to give your outfit a special finish.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">♡</div>
+                        <h3>Bridal Wear</h3>
+                        <p>Plan a memorable bridal look with personalized design options.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Embroidery Feature -->
+        <section class="embroidery-section">
+            <div class="embroidery-image">
+                <img src="{{ url_for('static', filename='images/embroidery.jpg') }}"
+                     alt="Detailed embroidery craftsmanship"
+                     loading="lazy">
+            </div>
+            <div class="embroidery-content">
+                <p class="eyebrow">THE BEAUTY IS IN THE DETAILS</p>
+                <h2>Every Stitch Has <span>A Story</span></h2>
+                <p>
+                    From delicate embroidery to carefully finished details,
+                    we believe the little things make an outfit extraordinary.
+                </p>
+                <a href="#booking" class="btn btn-light">Discuss Your Design</a>
+            </div>
+        </section>
+
+        <!-- Booking Form -->
+        <section class="booking-section section-padding" id="booking">
+            <div class="container booking-layout">
+
+                <div class="booking-intro">
+                    <p class="eyebrow">LET'S GET STARTED</p>
+                    <h2>Book Your <span>Appointment</span></h2>
+                    <p>
+                        Tell us what you are looking for. Submit your details
+                        and we can discuss your design, measurements and requirements.
+                    </p>
+
+                    <div class="booking-benefit">
+                        <span>01</span>
+                        <div>
+                            <h3>Share Your Ideas</h3>
+                            <p>Tell us about the outfit you have in mind.</p>
+                        </div>
+                    </div>
+
+                    <div class="booking-benefit">
+                        <span>02</span>
+                        <div>
+                            <h3>Choose Your Style</h3>
+                            <p>Discuss your preferred design and stitching.</p>
+                        </div>
+                    </div>
+
+                    <div class="booking-benefit">
+                        <span>03</span>
+                        <div>
+                            <h3>Confirm Your Visit</h3>
+                            <p>We will discuss your appointment details.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="booking-form" action="{{ url_for('book') }}" method="POST">
+                    <h3>Appointment Request</h3>
+                    <p class="form-description">Fields marked * are required.</p>
+
+                    <div class="form-group">
+                        <label for="customer_name">Full Name *</label>
+                        <input
+                            type="text"
+                            id="customer_name"
+                            name="customer_name"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            autocomplete="tel"
+                            pattern="[0-9+\-\s()]{7,20}"
+                            title="Enter a valid phone number"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Choose a Service *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="Suit Stitching">Suit Stitching</option>
+                            <option value="Lehenga Stitching">Lehenga Stitching</option>
+                            <option value="Bridal Wear">Bridal Wear</option>
+                            <option value="Anarkali Design">Anarkali Design</option>
+                            <option value="Embroidery Work">Embroidery Work</option>
+                            <option value="Custom Design">Custom Design</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="booking_date">Preferred Appointment Date *</label>
+                        <input
+                            type="date"
+                            id="booking_date"
+                            name="booking_date"
+                            min="{{ today }}"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Requirements</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            placeholder="Describe your outfit, design or special requirements"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary submit-button">
+                        Submit Booking Request
+                    </button>
+
+                    <p class="form-footnote">
+                        Submitting this form sends an appointment request, not a confirmed booking.
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section section-padding" id="contact">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">WE'D LOVE TO HEAR FROM YOU</p>
+                    <h2>Contact <span>Our Boutique</span></h2>
+                    <p>Have a question about an outfit or appointment? Get in touch.</p>
+                </div>
+
+                <div class="contact-grid">
+
+                    <article class="contact-card">
+                        <div class="contact-icon">☎</div>
+                        <h3>Call Us</h3>
+                        <p>Speak to us about your requirements.</p>
+                        <a href="tel:{{ admin_phone }}" class="contact-link">
+                            {{ admin_phone if admin_phone else '6280715453' }}
+                        </a>
+                    </article>
+
+                    <article class="contact-card">
+                        <div class="contact-icon">✉</div>
+                        <h3>Email Us</h3>
+                        <p>Send us your questions and design ideas.</p>
+                        <a href="mailto:{{ admin_email }}" class="contact-link">
+                            {{ admin_email if admin_email else 'yatinjangra97@gmail.com' }}
+                        </a>
+                    </article>
+
+                    <article class="contact-card">
+                        <div class="contact-icon">☏</div>
+                        <h3>WhatsApp</h3>
+                        <p>Message us to discuss your outfit.</p>
+                        <a
+                            href="https://wa.me/{{ admin_phone|replace('+', '')|replace(' ', '')|replace('-', '')|replace('(', '')|replace(')', '') }}"
+                            class="contact-link"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Chat on WhatsApp
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <a href="#home" class="brand footer-brand">
+                <span class="brand-mark">LK</span>
+                <span class="brand-name">
+                    <strong>Lord Krishna</strong>
+                    <small>BOUTIQUE</small>
+                </span>
+            </a>
+
+            <p>Celebrating your style, one beautiful stitch at a time.</p>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#collections">Collections</a>
+                <a href="#booking">Appointments</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <p class="copyright">
+                &copy; {{ current_year }} Lord Krishna Boutique. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
