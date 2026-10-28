@@ -8,15 +8,11 @@
 
     <title>Lord Krishna Boutique | Custom Stitching & Bridal Wear</title>
 
-    <meta
-        name="description"
-        content="Discover elegant suits, lehengas, bridal wear, custom stitching and embroidery at Lord Krishna Boutique."
-    >
+    <meta name="description"
+          content="Discover elegant suits, lehengas, bridal wear, custom stitching and embroidery at Lord Krishna Boutique.">
 
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='style.css') }}"
-    >
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -33,20 +29,23 @@
                 </span>
             </a>
 
-            <input
-                type="checkbox"
-                id="menu-toggle"
-                class="menu-toggle"
-                aria-label="Toggle navigation"
-            >
+            <input type="checkbox"
+                   id="menu-toggle"
+                   class="menu-toggle"
+                   aria-label="Toggle navigation"
+                   aria-controls="main-navigation">
 
-            <label for="menu-toggle" class="menu-icon" aria-label="Open navigation menu">
+            <label for="menu-toggle"
+                   class="menu-icon"
+                   aria-label="Open navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
 
-            <nav class="nav-links" aria-label="Main navigation">
+            <nav class="nav-links"
+                 id="main-navigation"
+                 aria-label="Main navigation">
                 <a href="#home">Home</a>
                 <a href="#collections">Collections</a>
                 <a href="#services">Services</a>
@@ -81,7 +80,6 @@
                     <a href="#collections" class="btn btn-primary">
                         Explore Collections
                     </a>
-
                     <a href="#booking" class="btn btn-outline">
                         Book an Appointment
                     </a>
@@ -137,20 +135,14 @@
                             <img
                                 src="{{ url_for('static', filename='images/suit.jpg') }}"
                                 alt="Elegant traditional suit design"
-                                loading="lazy"
-                            >
+                                loading="lazy">
                             <span class="image-label">EVERYDAY ELEGANCE</span>
                         </a>
 
                         <div class="collection-info">
                             <h3>Designer Suits</h3>
-                            <p>
-                                Beautifully tailored suits designed
-                                for comfort and elegance.
-                            </p>
-                            <a href="#booking" class="text-link">
-                                Book Your Design →
-                            </a>
+                            <p>Beautifully tailored suits designed for comfort and elegance.</p>
+                            <a href="#booking" class="text-link">Book Your Design →</a>
                         </div>
                     </article>
 
@@ -159,20 +151,14 @@
                             <img
                                 src="{{ url_for('static', filename='images/lehenga.jpg') }}"
                                 alt="Traditional embroidered lehenga"
-                                loading="lazy"
-                            >
+                                loading="lazy">
                             <span class="image-label">FESTIVE FAVOURITES</span>
                         </a>
 
                         <div class="collection-info">
                             <h3>Lehengas</h3>
-                            <p>
-                                Stunning lehenga designs for weddings,
-                                parties and celebrations.
-                            </p>
-                            <a href="#booking" class="text-link">
-                                Book Your Design →
-                            </a>
+                            <p>Stunning lehenga designs for weddings, parties and celebrations.</p>
+                            <a href="#booking" class="text-link">Book Your Design →</a>
                         </div>
                     </article>
 
@@ -181,20 +167,14 @@
                             <img
                                 src="{{ url_for('static', filename='images/bridal.jpg') }}"
                                 alt="Elegant bridal outfit"
-                                loading="lazy"
-                            >
+                                loading="lazy">
                             <span class="image-label">YOUR SPECIAL DAY</span>
                         </a>
 
                         <div class="collection-info">
                             <h3>Bridal Wear</h3>
-                            <p>
-                                Special outfits crafted to make your
-                                memorable occasions even more beautiful.
-                            </p>
-                            <a href="#booking" class="text-link">
-                                Book Your Design →
-                            </a>
+                            <p>Special outfits crafted for your memorable occasions.</p>
+                            <a href="#booking" class="text-link">Book Your Design →</a>
                         </div>
                     </article>
 
@@ -203,20 +183,14 @@
                             <img
                                 src="{{ url_for('static', filename='images/anarkali.jpg') }}"
                                 alt="Graceful Anarkali outfit"
-                                loading="lazy"
-                            >
+                                loading="lazy">
                             <span class="image-label">TIMELESS BEAUTY</span>
                         </a>
 
                         <div class="collection-info">
                             <h3>Anarkali Designs</h3>
-                            <p>
-                                Graceful silhouettes and customised
-                                fits for a timeless traditional look.
-                            </p>
-                            <a href="#booking" class="text-link">
-                                Book Your Design →
-                            </a>
+                            <p>Graceful silhouettes and customised fits for a timeless look.</p>
+                            <a href="#booking" class="text-link">Book Your Design →</a>
                         </div>
                     </article>
 
@@ -224,14 +198,14 @@
             </div>
         </section>
 
-        <!-- Feature Banner -->
+        <!-- Custom Design Feature -->
         <section class="feature-banner">
             <div class="feature-image">
                 <img
                     src="{{ url_for('static', filename='images/custom-design.jpg') }}"
                     alt="Custom ethnic fashion design"
                     loading="lazy"
-                >
+                    onerror="this.style.display='none'">
             </div>
 
             <div class="feature-content">
@@ -261,51 +235,35 @@
                 <div class="section-heading">
                     <p class="eyebrow">WHAT WE OFFER</p>
                     <h2>Our <span>Services</span></h2>
-                    <p>
-                        Personalised boutique services for your
-                        fashion and stitching needs.
-                    </p>
+                    <p>Personalised boutique services for your fashion and stitching needs.</p>
                 </div>
 
                 <div class="services-grid">
-
                     <article class="service-card">
                         <div class="service-icon" aria-hidden="true">✂</div>
                         <h3>Suit Stitching</h3>
-                        <p>
-                            Custom fitting and stitching for everyday
-                            wear and special occasions.
-                        </p>
+                        <p>Custom fitting and stitching for everyday wear and special occasions.</p>
                     </article>
 
                     <article class="service-card">
                         <div class="service-icon" aria-hidden="true">✿</div>
                         <h3>Lehenga Stitching</h3>
-                        <p>
-                            Personalised lehenga styles with your
-                            preferred design and fit.
-                        </p>
+                        <p>Personalised lehenga styles with your preferred design and fit.</p>
                     </article>
 
                     <article class="service-card">
                         <div class="service-icon" aria-hidden="true">♕</div>
                         <h3>Bridal Wear</h3>
-                        <p>
-                            Special bridal outfits designed around
-                            your preferences.
-                        </p>
+                        <p>Special bridal outfits designed around your preferences.</p>
                     </article>
 
                     <article class="service-card">
                         <div class="service-icon" aria-hidden="true">❋</div>
                         <h3>Embroidery Work</h3>
-                        <p>
-                            Decorative details to add beauty and
-                            character to your garments.
-                        </p>
+                        <p>Decorative details to add beauty and character to your garments.</p>
                     </article>
-
                 </div>
+
             </div>
         </section>
 
@@ -315,8 +273,7 @@
                 <img
                     src="{{ url_for('static', filename='images/embroidery.jpg') }}"
                     alt="Detailed embroidery on traditional clothing"
-                    loading="lazy"
-                >
+                    loading="lazy">
             </div>
 
             <div class="embroidery-content">
@@ -387,7 +344,7 @@
                     <!-- Flask success/error messages -->
                     {% with messages = get_flashed_messages(with_categories=true) %}
                         {% if messages %}
-                            <div class="flash-messages" aria-live="polite">
+                            <div class="flash-messages" role="status" aria-live="polite">
                                 {% for category, message in messages %}
                                     <p class="flash-message {{ category }}">
                                         {{ message }}
@@ -401,17 +358,13 @@
                         class="booking-form"
                         id="booking-form"
                         action="{{ url_for('book') }}"
-                        method="POST"
-                    >
-                        <h3>Appointment Request</h3>
+                        method="POST">
 
-                        <p class="form-description">
-                            Fields marked * are required.
-                        </p>
+                        <h3>Appointment Request</h3>
+                        <p class="form-description">Fields marked * are required.</p>
 
                         <div class="form-group">
                             <label for="customer_name">Full Name *</label>
-
                             <input
                                 type="text"
                                 id="customer_name"
@@ -421,19 +374,15 @@
                                 minlength="2"
                                 maxlength="100"
                                 required
-                                aria-describedby="customer_name-error"
-                            >
+                                aria-describedby="customer_name-error">
 
-                            <small
-                                class="field-error"
-                                id="customer_name-error"
-                                aria-live="polite"
-                            ></small>
+                            <small class="field-error"
+                                   id="customer_name-error"
+                                   aria-live="polite"></small>
                         </div>
 
                         <div class="form-group">
                             <label for="phone">Phone Number *</label>
-
                             <input
                                 type="tel"
                                 id="phone"
@@ -445,25 +394,20 @@
                                 pattern="[6-9][0-9]{9}"
                                 title="Enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9"
                                 required
-                                aria-describedby="phone-error"
-                            >
+                                aria-describedby="phone-error">
 
-                            <small
-                                class="field-error"
-                                id="phone-error"
-                                aria-live="polite"
-                            ></small>
+                            <small class="field-error"
+                                   id="phone-error"
+                                   aria-live="polite"></small>
                         </div>
 
                         <div class="form-group">
                             <label for="service">Choose a Service *</label>
-
                             <select
                                 id="service"
                                 name="service"
                                 required
-                                aria-describedby="service-error"
-                            >
+                                aria-describedby="service-error">
                                 <option value="">Select a service</option>
                                 <option value="Suit Stitching">Suit Stitching</option>
                                 <option value="Lehenga Stitching">Lehenga Stitching</option>
@@ -473,62 +417,48 @@
                                 <option value="Custom Design">Custom Design</option>
                             </select>
 
-                            <small
-                                class="field-error"
-                                id="service-error"
-                                aria-live="polite"
-                            ></small>
+                            <small class="field-error"
+                                   id="service-error"
+                                   aria-live="polite"></small>
                         </div>
 
                         <div class="form-group">
-                            <label for="booking_date">
-                                Preferred Appointment Date *
-                            </label>
-
+                            <label for="booking_date">Preferred Appointment Date *</label>
                             <input
                                 type="date"
                                 id="booking_date"
                                 name="booking_date"
                                 min="{{ today }}"
                                 required
-                                aria-describedby="booking_date-error"
-                            >
+                                aria-describedby="booking_date-error">
 
-                            <small
-                                class="field-error"
-                                id="booking_date-error"
-                                aria-live="polite"
-                            ></small>
+                            <small class="field-error"
+                                   id="booking_date-error"
+                                   aria-live="polite"></small>
                         </div>
 
                         <div class="form-group">
                             <label for="message">Your Requirements</label>
-
                             <textarea
                                 id="message"
                                 name="message"
                                 rows="4"
                                 maxlength="2000"
-                                placeholder="Describe your outfit, fabric, design or special requirements"
-                            ></textarea>
+                                placeholder="Describe your outfit, fabric, design or special requirements"></textarea>
                         </div>
 
-                        <p
-                            class="form-error"
-                            id="form-error"
-                            aria-live="polite"
-                        ></p>
+                        <p class="form-error"
+                           id="form-error"
+                           role="alert"
+                           aria-live="polite"></p>
 
-                        <button
-                            type="submit"
-                            class="btn btn-primary submit-button"
-                        >
+                        <button type="submit" class="btn btn-primary submit-button">
                             Submit Booking Request
                         </button>
 
                         <p class="form-footnote">
-                            Submitting this form sends an appointment
-                            request, not a confirmed booking.
+                            Submitting this form sends an appointment request,
+                            not a confirmed booking.
                         </p>
                     </form>
                 </div>
@@ -550,44 +480,28 @@
                 </div>
 
                 <div class="contact-grid">
-
                     <article class="contact-card">
                         <div class="contact-icon" aria-hidden="true">✂</div>
                         <h3>Our Services</h3>
-                        <p>
-                            Explore stitching, bridal wear, embroidery
-                            and custom designs.
-                        </p>
-                        <a href="#services" class="contact-link">
-                            View Services
-                        </a>
+                        <p>Explore stitching, bridal wear, embroidery and custom designs.</p>
+                        <a href="#services" class="contact-link">View Services</a>
                     </article>
 
                     <article class="contact-card">
                         <div class="contact-icon" aria-hidden="true">♡</div>
                         <h3>Custom Designs</h3>
-                        <p>
-                            Share your outfit ideas and preferred
-                            design details with us.
-                        </p>
-                        <a href="#booking" class="contact-link">
-                            Discuss Your Design
-                        </a>
+                        <p>Share your outfit ideas and preferred design details with us.</p>
+                        <a href="#booking" class="contact-link">Discuss Your Design</a>
                     </article>
 
                     <article class="contact-card">
                         <div class="contact-icon" aria-hidden="true">◷</div>
                         <h3>Appointments</h3>
-                        <p>
-                            Send an appointment request with your
-                            preferred date.
-                        </p>
-                        <a href="#booking" class="contact-link">
-                            Book Appointment
-                        </a>
+                        <p>Send an appointment request with your preferred date.</p>
+                        <a href="#booking" class="contact-link">Book Appointment</a>
                     </article>
-
                 </div>
+
             </div>
         </section>
 
@@ -628,19 +542,14 @@
         const bookingForm = document.getElementById("booking-form");
 
         if (bookingForm) {
-            const validationFields = [
+            const fields = [
                 {
                     id: "customer_name",
                     validate(value) {
                         const name = value.trim();
 
-                        if (!name) {
-                            return "Please enter your full name.";
-                        }
-
-                        if (name.length < 2) {
-                            return "Your name must contain at least 2 characters.";
-                        }
+                        if (!name) return "Please enter your full name.";
+                        if (name.length < 2) return "Your name must contain at least 2 characters.";
 
                         return "";
                     }
@@ -650,10 +559,7 @@
                     validate(value) {
                         const phone = value.trim();
 
-                        if (!phone) {
-                            return "Please enter your phone number.";
-                        }
-
+                        if (!phone) return "Please enter your phone number.";
                         if (!/^[6-9][0-9]{9}$/.test(phone)) {
                             return "Enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9.";
                         }
@@ -664,30 +570,23 @@
                 {
                     id: "service",
                     validate(value) {
-                        if (!value) {
-                            return "Please select a service.";
-                        }
-
-                        return "";
+                        return value ? "" : "Please select a service.";
                     }
                 },
                 {
                     id: "booking_date",
                     validate(value) {
-                        if (!value) {
-                            return "Please select an appointment date.";
-                        }
+                        if (!value) return "Please select an appointment date.";
 
                         const selected = new Date(value + "T00:00:00");
-                        const now = new Date();
-
-                        now.setHours(0, 0, 0, 0);
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);
 
                         if (Number.isNaN(selected.getTime())) {
                             return "Please enter a valid appointment date.";
                         }
 
-                        if (selected < now) {
+                        if (selected < today) {
                             return "Please choose today or a future date.";
                         }
 
@@ -700,17 +599,13 @@
                 const input = document.getElementById(field.id);
                 const error = document.getElementById(field.id + "-error");
 
-                if (!input || !error) {
-                    return true;
-                }
+                if (!input || !error) return true;
 
                 const message = field.validate(input.value);
 
                 error.textContent = message;
                 input.setCustomValidity(message);
-
                 input.classList.toggle("invalid-field", Boolean(message));
-
                 input.classList.toggle(
                     "valid-field",
                     !message && input.value.trim() !== ""
@@ -719,7 +614,7 @@
                 return message === "";
             }
 
-            validationFields.forEach(function (field) {
+            fields.forEach(function (field) {
                 const input = document.getElementById(field.id);
 
                 input.addEventListener("blur", function () {
@@ -738,10 +633,8 @@
             bookingForm.addEventListener("submit", function (event) {
                 let valid = true;
 
-                validationFields.forEach(function (field) {
-                    if (!validateField(field)) {
-                        valid = false;
-                    }
+                fields.forEach(function (field) {
+                    if (!validateField(field)) valid = false;
                 });
 
                 const formError = document.getElementById("form-error");
@@ -764,11 +657,19 @@
 
         document.querySelectorAll(".nav-links a").forEach(function (link) {
             link.addEventListener("click", function () {
-                if (menuToggle) {
-                    menuToggle.checked = false;
-                }
+                if (menuToggle) menuToggle.checked = false;
             });
         });
+
+        // Scroll to the booking form when a server message is displayed.
+        const flashMessages = document.querySelector(".flash-messages");
+
+        if (flashMessages && window.location.hash === "#booking") {
+            document.getElementById("booking")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
     </script>
 
 </body>
