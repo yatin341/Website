@@ -18,6 +18,8 @@ from flask import (
 from main import validate_booking, calculate_price
 
 
+
+
 BASE_DIR = Path(__file__).resolve().parent
 load_dotenv(BASE_DIR / ".env")
 
@@ -51,36 +53,27 @@ logging.basicConfig(level=logging.INFO)
 
 
 
+
 def get_db_connection():
-    """Connect to the configured MySQL database."""
+    import os
+    import mysql.connector
 
-    required_vars = [
-        "DB_HOST",
-        "DB_USER",
-        "DB_PASSWORD",
-        "DB_NAME",
-    ]
-
-    missing = [
-        key for key in required_vars
-        if not os.getenv(key)
-    ]
-
-    if missing:
-        raise RuntimeError(
-            "Missing database environment variables: "
-            + ", ".join(missing)
-        )
+    ca_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "ca.pem"
+    )
 
     return mysql.connector.connect(
         host=os.environ["DB_HOST"],
-        port=int(os.getenv("DB_PORT", "3306")),
+        port=int(os.environ.get("DB_PORT", "21850")),
         user=os.environ["DB_USER"],
         password=os.environ["DB_PASSWORD"],
         database=os.environ["DB_NAME"],
-        connection_timeout=10,
+        ssl_ca=ca_path,
+        ssl_verify_cert=True,
+        ssl_verify_identity=True,
+        connection_timeout=15
     )
-
 
 
 def init_db():
@@ -144,7 +137,6 @@ def home():
         today=date.today().isoformat(),
         current_year=date.today().year,
     )
-
 
 
 @app.route("/book", methods=["POST"])
@@ -269,13 +261,9 @@ def book():
 
 
 
-
 @app.route("/healthz")
 def health_check():
     return {"status": "ok"}, 200
-
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
