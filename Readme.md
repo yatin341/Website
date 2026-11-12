@@ -50,9 +50,6 @@ DB_PORT=3306
 DB_USER=your_mysql_username
 DB_PASSWORD=your_mysql_password
 DB_NAME=lord_krishna_boutique
-ADMIN_PHONE=6280715453
-ADMIN_EMAI=yatinjangra97@gmail.com
-
 
 Running the Application
 
